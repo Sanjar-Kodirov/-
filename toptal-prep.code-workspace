@@ -1,0 +1,21 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.autoSave": "afterDelay",
+        "editor.fontSize": 14,
+        "editor.tabSize": 2,
+        "terminal.integrated.fontSize": 13
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.vscode-json",
+            "bradlc.vscode-tailwindcss",
+            "esbenp.prettier-vscode",
+            "ms-vscode.vscode-typescript-next"
+        ]
+    }
+}

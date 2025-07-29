@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Sync: Pull changes",
+            "type": "shell",
+            "command": "git pull",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Sync: Push changes",
+            "type": "shell",
+            "command": "git add . && git commit -m 'Daily progress update' && git push",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Open progress tracker",
+            "type": "shell",
+            "command": "code toptal-progress-tracker.md",
+            "group": "build"
+        }
+    ]
+}

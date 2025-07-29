@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Loop Practice</title>
+</head>
+<body>
+    <h1>Event Loop Practice - День 1</h1>
+    <p>Откройте DevTools (F12) и посмотрите на результаты в консоли</p>
+    
+    <script>
+        console.log('=== Пример 1: Базовый Event Loop ===');
+        console.log('1');
+        setTimeout(() => console.log('2'), 0);
+        Promise.resolve().then(() => console.log('3'));
+        console.log('4');
+        
+        console.log('\n=== Пример 2: Множественные таймеры и промисы ===');
+        setTimeout(() => console.log('timeout1'), 0);
+        setTimeout(() => console.log('timeout2'), 0);
+        Promise.resolve().then(() => console.log('promise1'));
+        Promise.resolve().then(() => console.log('promise2'));
+        console.log('sync');
+        
+        console.log('\n=== Пример 3: Вложенные промисы ===');
+        Promise.resolve().then(() => {
+            console.log('promise A');
+            Promise.resolve().then(() => console.log('promise B'));
+        });
+        Promise.resolve().then(() => console.log('promise C'));
+        
+        console.log('\n=== Ваша задача ===');
+        console.log('Предскажите порядок выполнения ПЕРЕД запуском:');
+        
+        setTimeout(() => console.log('timer1'), 0);
+        Promise.resolve().then(() => {
+            console.log('promise1');
+            setTimeout(() => console.log('timer2'), 0);
+        });
+        Promise.resolve().then(() => console.log('promise2'));
+        console.log('sync1');
+        setTimeout(() => console.log('timer3'), 0);
+        console.log('sync2');
+    </script>
+</body>
+</html>
